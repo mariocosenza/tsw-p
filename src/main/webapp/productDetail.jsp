@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="model.ProductBean, java.text.DecimalFormat"%>
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+    
 <% 
 	ProductBean prodotto = null;
 	if (request.getAttribute("prodottoDettaglio") == null) {
@@ -33,7 +35,7 @@
 			</div>
 			<div class="col2">
 				<h6><%=prodotto.getTipologia()%> / <%=prodotto.getTag() %></h6>
-				<h3 class="nome"><%=prodotto.getNome()%></h3>
+				<h3 class="nome"><c:out value ="${prodotto.name}"></h3>
 				
 				<ul class = "rating" style="padding: 0">
 							<%
