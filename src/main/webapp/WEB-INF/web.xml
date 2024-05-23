@@ -12,7 +12,23 @@
   		<form-error-page>/login-error.jsp</form-error-page>
   	</form-login-config> 
   </login-config>
-     
+  
+  
+  <!--
+  <filter>
+    <filter-name>httpHeaderSecurity</filter-name>
+    <filter-class>org.apache.catalina.filters.HttpHeaderSecurityFilter</filter-class>
+    <async-supported>true</async-supported>
+    <init-param>
+            <param-name>antiClickJackingOption</param-name>
+            <param-value>ALLOW-FROM</param-value>
+    </init-param>
+    <init-param>
+            <param-name>antiClickJackingUri</param-name>
+            <param-value>[https://subdomain1.example.com][https://subdomain2.example.com][https://subdomain3.example.com]</param-value>
+    </init-param>
+ </filter>
+     -->
   <filter>
   <filter-name>XSSFilter</filter-name>
   <filter-class>com.cj.xss.XSSFilter</filter-class>
