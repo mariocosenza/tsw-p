@@ -113,7 +113,12 @@ public class ProductControl extends HttpServlet {
 
 		try { 
 			request.removeAttribute("products");
-			request.setAttribute("products", model.doRetrieveAll(tipologia));
+			if(tipologia.equals("Arredamento-Casa") || tipologia.equals("Action-Figures") || tipologia.equals("Gadget")) {
+				request.setAttribute("products", model.doRetrieveAll(tipologia));
+			} else {
+				request.setAttribute("products", model.doRetrieveAll("Action-Figures")); //default 
+			}
+			
 		} catch (SQLException e) {
 			System.out.println("Error: " + e.getMessage());
 		}
@@ -127,5 +132,7 @@ public class ProductControl extends HttpServlet {
 			throws ServletException, IOException {
 		doGet(request, response);
 	}
+	
+	
 
 }
