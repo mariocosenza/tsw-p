@@ -29,11 +29,18 @@
   -->
   </security-constraint>
   
+
+    <error-page>
+        <location>/error.html</location>
+    </error-page>
+
   <security-role>
   	<role-name>administrator</role-name>
   </security-role>
   <security-role>
   	<role-name>registeredUser</role-name>
   </security-role>
+  
+  
   
 </web-app>
